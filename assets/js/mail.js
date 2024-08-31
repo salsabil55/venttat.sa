@@ -1,5 +1,6 @@
 function sendMail() {
   const responseMsg = document.getElementById("respone");
+  const submitButtn = document.getElementById("Submit");
 
   var params = {
     from_name: document.getElementById("funame").value,
@@ -14,8 +15,12 @@ function sendMail() {
     .then((res) => {
       if (responseMsg) {
         responseMsg.style.display = "block";
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        $("#myForm")[0].reset();
+        $("#Submit").attr("disabled", "disabled");
+        $("#Submit").html("Sending...");
+        setTimeout(() => {
+          $("#myForm")[0].reset();
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+        }, 2000);
       } else {
         console.error("Element with ID 'response' not found.");
       }
