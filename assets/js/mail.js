@@ -5,8 +5,7 @@ function sendMail() {
     tel_id: document.getElementById("tel").value,
     event_id: document.getElementById("event").value,
     service_id: document.getElementById("service").value,
-  };
-  email
+  }
     .send(service_yxvzbi7, template_b3vmq1a, params)
     .then(function redirectToHome() {
       window.location.href = "/"; // Redirects to the home page
