@@ -1,5 +1,6 @@
 function sendMail() {
-  const params = {
+  let params;
+  params = {
     from_name: document.getElementById("funame").value,
     email_id: document.getElementById("email_id").value,
     tel_id: document.getElementById("tel").value,
