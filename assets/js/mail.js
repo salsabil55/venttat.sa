@@ -1,4 +1,5 @@
 function sendMail() {
+  const response_msg = document.getElementsByClassName("response");
   var params = {
     from_name: document.getElementById("funame").value,
     email_id: document.getElementById("email_id").value,
@@ -11,7 +12,7 @@ function sendMail() {
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
       console.log("sucess sent msg", res);
-      window.location.href = "https://salsabil55.github.io/venttat.sa/"; // Redirects to the home page
+      response_msg.style.display = "block";
     })
     .catch((error) => {
       console.error("Error:", error);
