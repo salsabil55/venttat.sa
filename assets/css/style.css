@@ -12550,7 +12550,7 @@ blockquote.vs-quote .quote-author {
 }
 /*# sourceMappingURL=style.css.map */
 
-.alert.alert-success.response {
+.alert.alert-success#response {
   margin-top: 20px;
   display: none;
 }
