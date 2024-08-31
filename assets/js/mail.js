@@ -14,7 +14,8 @@ function sendMail() {
     .then((res) => {
       if (responseMsg) {
         responseMsg.style.display = "block";
-        console.log("Successfully sent message:", res);
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("#myForm")[0].reset();
       } else {
         console.error("Element with ID 'response' not found.");
       }
