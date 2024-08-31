@@ -1,7 +1,8 @@
 function sendMail() {
   const responseMsg = document.getElementById("respone");
   const submitButtn = document.getElementById("Submit");
-
+  $("#Submit").html("Sending...");
+  $("#Submit").attr("disabled", "disabled");
   var params = {
     from_name: document.getElementById("funame").value,
     email_id: document.getElementById("email_id").value,
@@ -14,8 +15,6 @@ function sendMail() {
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
       if (responseMsg) {
-        $("#Submit").html("Sending...");
-        $("#Submit").attr("disabled", "disabled");
         responseMsg.style.display = "block";
         setTimeout(() => {
           $("#myForm")[0].reset();
