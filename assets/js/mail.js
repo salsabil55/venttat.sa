@@ -14,9 +14,9 @@ function sendMail() {
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
       if (responseMsg) {
-        responseMsg.style.display = "block";
         $("#Submit").html("Sending...");
         $("#Submit").attr("disabled", "disabled");
+        responseMsg.style.display = "block";
         setTimeout(() => {
           $("#myForm")[0].reset();
           $("html, body").animate({ scrollTop: 0 }, "slow");
