@@ -1,6 +1,5 @@
 function sendMail() {
   const responseMsg = document.getElementById("respone");
-  responseMsg.style.display = "none";
 
   var params = {
     from_name: document.getElementById("funame").value,
