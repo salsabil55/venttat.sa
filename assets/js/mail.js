@@ -1,5 +1,5 @@
 function sendMail() {
-  const response_msg = document.getElementsByClassName("response");
+  const responseMsg = document.getElementById("respone");
   var params = {
     from_name: document.getElementById("funame").value,
     email_id: document.getElementById("email_id").value,
@@ -11,8 +11,8 @@ function sendMail() {
   emailjs
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
+      responseMsg.style.display = "block";
       console.log("sucess sent msg", res);
-      response_msg.style.display = "block";
     })
     .catch((error) => {
       console.error("Error:", error);
