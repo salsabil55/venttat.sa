@@ -11,8 +11,12 @@ function sendMail() {
   emailjs
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
-      responseMsg.style.display = "block";
-      console.log("sucess sent msg", res);
+      if (responseMsg) {
+        responseMsg.style.display = "block";
+        console.log("Successfully sent message:", res);
+      } else {
+        console.error("Element with ID 'response' not found.");
+      }
     })
     .catch((error) => {
       console.error("Error:", error);
