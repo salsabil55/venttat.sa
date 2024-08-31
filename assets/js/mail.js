@@ -11,7 +11,7 @@ function sendMail() {
     .send("service_yxvzbi7", "template_b3vmq1a", params)
     .then((res) => {
       console.log("sucess sent msg", res);
-      window.location.href = "/"; // Redirects to the home page
+      window.location.href = "https://salsabil55.github.io/venttat.sa/"; // Redirects to the home page
     })
     .catch((error) => {
       console.error("Error:", error);
