@@ -18,6 +18,8 @@ function sendMail() {
         responseMsg.style.display = "block";
         setTimeout(() => {
           $("#myForm")[0].reset();
+          responseMsg.style.display = "none";
+
           $("html, body").animate({ scrollTop: 0 }, "slow");
         }, 2000);
       } else {
