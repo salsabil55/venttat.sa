@@ -15,8 +15,8 @@ function sendMail() {
     .then((res) => {
       if (responseMsg) {
         responseMsg.style.display = "block";
-        $("#Submit").attr("disabled", "disabled");
         $("#Submit").html("Sending...");
+        $("#Submit").attr("disabled", "disabled");
         setTimeout(() => {
           $("#myForm")[0].reset();
           $("html, body").animate({ scrollTop: 0 }, "slow");
