@@ -12531,3 +12531,6 @@ form label.error {
 form button:hover {
   background-color: white !important;
 }
+button.vs-btn.style4 a {
+  padding: 20px 20px;
+}
