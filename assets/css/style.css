@@ -1,81 +1,4 @@
-/*
-Template Name: Eventino
-Template URL: https://html.vecuro.com/Eventino
-Description: Eventino - IT Solution & Service HTML Template
-Author: vecuro
-Author URI: https://themeforest.net/user/vecuro_themes
-Version: 1.0.0
-*/
-/*=================================
-    CSS Index Here
-==================================*/
-/*
-
-01. Theme Base
-    1.1. Mixin
-    1.2. Function
-    1.3. Variable
-    1.4. Typography
-    1.5. Extend
-    1.7. Wordpress Default
-02. Reset
-    2.1. Container
-    2.2. Grid
-    2.3. Input
-    2.4. Slick Slider
-    2.5. Mobile Menu
-03. Utilities
-    3.1. Preloader
-    3.2. Buttons
-    3.3. Titles
-    3.4. Common
-    3.6. Font
-    3.7. Background
-    3.8. Text Color
-    3.9. Overlay
-    3.10. Animation
-04. Template Style
-    4.1. Widget
-    4.2. Header
-    4.3. Footer
-    4.4. Breadcumb
-    4.5. Pagination
-    4.6. Blog
-    4.7. Comments
-    4.8. Hero Area
-    4.9. Error    
-    4.10. Feature
-    4.11. About
-    4.12. Service
-    4.13. Counter
-    4.14. Team
-    4.15. Process
-    4.16. Accordion
-    4.17. Simple Sections
-    4.18. Testimonial
-    4.19. Popup Side Menu
-    4.20. Price Plan
-    4.21. Forms Style
-    4.22. Projects
-    4.23. Contact
-    4.24. Event
-    4.25. CTA
-    4.26. Video
-    4.27. Gallery
-    4.28. Newsletter
-05. Spacing
-06. Color Plate
-
-*/
-/*=================================
-    CSS Index End
-==================================*/
-/*=================================
-   01. Theme Base
-==================================*/
-/*------------------- 1.1. Mixin -------------------*/
-/*------------------- 1.2. Function -------------------*/
-/*------------------- 1.3. Variable-------------------*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
 :root {
   --theme-color: #263063;
   --sec-color: #000000;
@@ -1813,15 +1736,23 @@ textarea.is-invalid {
   background-color: var(--white-color);
   color: var(--theme-color);
 }
+.vs-btn.style4:hover {
+  background-color: red;
+  color: var(--theme-color);
+}
 .vs-btn.style4::after,
 .vs-btn.style4::before {
-  background-color: var(--sec-color);
+  background-color: #405e8f;
 }
 .vs-btn.slidebtn1 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
+}
+/* edit */
+button.vs-btn.style4 a:hover {
+  color: white !important;
 }
 .vs-btn.slidebtn1 i {
   margin-left: 0;
@@ -1845,7 +1776,7 @@ textarea.is-invalid {
 }
 .vs-btn:hover {
   color: var(--white-color);
-  background-color: var(--title-color);
+  background-color: #3e4d9b;
 }
 .vs-btn:hover:before {
   transform: rotateX(0);
@@ -12569,4 +12500,34 @@ blockquote.vs-quote .quote-author {
 
 #scroll_to_top:hover {
   background-color: #555;
+}
+
+textarea#message {
+  min-height: 90px;
+}
+.vs-navbar {
+  background-color: #263063;
+}
+.menu-style2 a:hover {
+  color: #9e9e9e !important;
+}
+.menu-style2 a:hover {
+  color: #9e9e9e !important;
+}
+.container.copyright-section {
+  background-color: #0b2048;
+}
+form label.error {
+  color: #a94442;
+  /* color: white; */
+  background-color: rgb(242 222 222 / 90%);
+  border-color: #ebccd1;
+  padding: 10px;
+  border-radius: 30px;
+  text-align: left;
+  margin-top: 10px;
+  border: 1px solid #a94442;
+}
+form button:hover {
+  background-color: white !important;
 }

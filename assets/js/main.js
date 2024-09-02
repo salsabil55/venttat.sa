@@ -349,93 +349,6 @@
   $("[data-slick-next]").slickGoNext();
   $("[data-slick-prev]").slickGoPrev();
 
-  /*----------- 08. Ajax Contact Form ----------*/
-  function ajaxContactForm(selectForm) {
-    var form = selectForm;
-    var invalidCls = "is-invalid";
-    var $email = '[name="email"]';
-    var $validation =
-      '[name="name"],[name="email"],[name="phone"],[name="message"]'; // Remove [name="subject"]
-    var formMessages = $(selectForm).next(".form-messages");
-
-    function sendContact() {
-      var formData = $(form).serialize();
-      var valid;
-      valid = validateContact();
-      if (valid) {
-        jQuery
-          .ajax({
-            url: $(form).attr("action"),
-            data: formData,
-            type: "POST",
-          })
-          .done(function (response) {
-            // Make sure that the formMessages div has the 'success' class.
-            formMessages.removeClass("error");
-            formMessages.addClass("success");
-            // Set the message text.
-            formMessages.text(response);
-            // Clear the form.
-            $(form + ' input:not([type="submit"]),' + form + " textarea").val(
-              ""
-            );
-          })
-          .fail(function (data) {
-            // Make sure that the formMessages div has the 'error' class.
-            formMessages.removeClass("success");
-            formMessages.addClass("error");
-            // Set the message text.
-            if (data.responseText !== "") {
-              formMessages.html(data.responseText);
-            } else {
-              formMessages.html(
-                "Oops! An error occurred and your message could not be sent."
-              );
-            }
-          });
-      }
-    }
-
-    function validateContact() {
-      var valid = true;
-      var formInput;
-      function unvalid($validation) {
-        $validation = $validation.split(",");
-        for (var i = 0; i < $validation.length; i++) {
-          formInput = form + " " + $validation[i];
-          if (!$(formInput).val()) {
-            $(formInput).addClass(invalidCls);
-            valid = false;
-          } else {
-            $(formInput).removeClass(invalidCls);
-            valid = true;
-          }
-        }
-      }
-      unvalid($validation);
-
-      if (
-        !$(form + " " + $email).val() ||
-        !$(form + " " + $email)
-          .val()
-          .match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)
-      ) {
-        $(form + " " + $email).addClass(invalidCls);
-        valid = false;
-      } else {
-        $(form + " " + $email).removeClass(invalidCls);
-        valid = true;
-      }
-      return valid;
-    }
-
-    $(form).on("submit", function (element) {
-      element.preventDefault();
-      sendContact();
-    });
-  }
-  ajaxContactForm(".ajax-contact");
-
   /*---------- 09. Popup Side Menu ----------*/
   function popupSideMenu($sideMenu, $sideMunuOpen, $sideMenuCls, $toggleCls) {
     // Sidebar Popup
@@ -632,22 +545,7 @@
   });
 
   /*----------- 16. Color Plate Js ----------*/
-  if ($(".vs-color-plate").length) {
-    var oldValue = $("#plate-color").val();
-    $("#plate-color").on("change", function (e) {
-      var color = e.target.value;
-      $("body").css("--theme-color", color);
-    });
 
-    $("#plate-reset").on("click", function () {
-      $("body").css("--theme-color", "");
-      $("#plate-color").val(oldValue);
-    });
-
-    $("#plate-toggler").on("click", function () {
-      $(".vs-color-plate").toggleClass("open");
-    });
-  }
   /*----------- 17. Animate Counter Js ----------*/
   // Function to animate the counters
   function animateCounter(counter) {
@@ -837,21 +735,7 @@
     }
 
     // Initialize on the first tab by default
-    initializeIntlTelInput("phone1");
 
     // Reinitialize on tab show
-    const tabElements = document.querySelectorAll(
-      'button[data-bs-toggle="tab"]'
-    );
-    tabElements.forEach((tab) => {
-      tab.addEventListener("shown.bs.tab", function (event) {
-        const target = event.target.getAttribute("data-bs-target");
-        if (target === "#home-tab-pane") {
-          initializeIntlTelInput("phone1");
-        } else if (target === "#profile-tab-pane") {
-          initializeIntlTelInput("phone2");
-        }
-      });
-    });
   });
 })(jQuery);

@@ -1,36 +1,33 @@
 //
-
 $(document).ready(function () {
-  $("#myForm").validate({
+  $("#contactForm").validate({
     rules: {
-      fname: "required",
+      name: "required",
       email: {
         required: true,
         email: true,
       },
-      tel: {
+      mobil: {
         required: true,
         minlength: 9,
         maxlength: 11,
       },
-      event: "required",
-      service: "required",
-      notes: {
+
+      message: {
         required: false,
       },
     },
 
     messages: {
-      fname: "Please Enter your Name",
+      name: "Please Enter your Name",
       email: "Please Enter your Email",
-      tel: "Please Enter your Mobile Number",
-      event: "Please Choose Event",
-      service: "Please Choose Service",
+      mobil: "Please Enter your Mobile Number",
     },
 
     submitHandler: function (form) {
       // Call sendMail function or directly call emailjs here
       sendMail();
+
       // Prevent default form submission if using AJAX
       return false;
     },
@@ -48,23 +45,21 @@ function sendMail() {
 
   // Collect form data
   var params = {
-    from_name: document.getElementById("funame").value,
+    from_name: document.getElementById("name").value,
     email_id: document.getElementById("email_id").value,
-    tel_id: document.getElementById("tel").value,
-    event_id: document.getElementById("event").value,
-    service_id: document.getElementById("services").value,
-    notes_id: document.getElementById("notes").value,
+    mobil_id: document.getElementById("mobil_id").value,
+    msg_id: document.getElementById("msg_id").value,
   };
 
   // Send email using EmailJS
   emailjs
-    .send("service_yxvzbi7", "template_b3vmq1a", params)
+    .send("service_yxvzbi7", "template_gdqb015", params)
     .then((res) => {
       if (responseMsg) {
         responseMsg.style.display = "block"; // Show success message
         responseMsg.textContent = "Message sent successfully!";
         setTimeout(() => {
-          $("#myForm")[0].reset(); // Reset the form after a delay
+          $("#contactForm")[0].reset(); // Reset the form after a delay
           responseMsg.style.display = "none";
           $("html, body").animate({ scrollTop: 0 }, "slow"); // Scroll to top using jQuery
         }, 2000);
