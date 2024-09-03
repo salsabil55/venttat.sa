@@ -1587,6 +1587,7 @@ textarea.is-invalid {
   top: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 30%;
 }
 .preloader-inner img {
   display: block;
@@ -9674,22 +9675,19 @@ blockquote.vs-quote .quote-author {
 }
 
 /*------------------- 4.19. Popup Side Menu  -------------------*/
-.sideMenuToggler {
+.sideMenubtn {
   background-color: transparent;
   border: 0;
   padding: 0;
+  cursor: auto !important;
 }
-.sideMenuToggler svg path {
+.sideMenubtn svg path {
   transition: all 0.3s ease-in-out;
 }
-.sideMenuToggler:hover svg path {
+.sideMenubtn:hover svg path {
   transition: all 0.3s ease-in-out;
-  fill: var(--theme-color);
 }
-.sideMenuToggler.v2:hover svg path {
-  transition: all 0.3s ease-in-out;
-  fill: var(--theme-color);
-}
+
 .sideMenuToggler.v3 {
   min-width: 60px;
   min-height: 60px;
