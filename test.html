@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <form
+      enctype="multipart/form-data"
+      method="post"
+      onsubmit="formSubmit()"
+      id="contact-form"
+    >
+      <!-- To simplify the tutorial, the value is static. -->
+      <input type="hidden" name="contact_number" value="697483" />
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <input type="file" name="my_file" />
+
+      <label>Message</label>
+      <textarea name="message"></textarea>
+      <input type="submit" value="Send" />
+    </form>
+  </body>
+  <script
+    type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+  ></script>
+  <script type="text/javascript">
+    (function () {
+      // https://dashboard.emailjs.com/admin/account
+      emailjs.init({
+        publicKey: "YGZQd0VsEGg_3HS2F",
+      });
+    })();
+  </script>
+  <script type="text/javascript">
+    function formSubmit(event) {
+      event.preventDefault();
+      console.log(this);
+      // emailjs.sendForm("service_wbq2y8o", "template_hv7pfag", this);
+    }
+  </script>
+</html>
